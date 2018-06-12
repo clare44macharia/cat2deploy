@@ -65,6 +65,7 @@
         </style>
     </head>
     <body>
+
        
 <table border=1>
 <tr>
@@ -77,6 +78,7 @@
 
 @foreach ($fees as $fee)
 <tr>
+
 <td>{{$fee->date_of_payment}}</td>
 <td>{{$fee->amount}}</td>
 <td>{{$fee->student_id}}</td>
@@ -87,7 +89,7 @@
 
 
 </table>
-<p> Total Fees Paid:{{$fees->sum('amount')}}</p>
+<p> Total Fees By All Students:{{$fees->sum('amount')}}</p>
 
 <a href = "/">Back</a>
        

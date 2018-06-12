@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #E9967A;
-                color: #000;
+                color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -65,33 +65,33 @@
         </style>
     </head>
     <body>
-       
-<table border=1>
-<tr>
+        <div class="flex-center position-ref full-height">
+         
 
-<td>Date_of_payment</td>
-<td>Amount</td>
-<td>student_no</td>
+            <div class="content">
+                <div class="title m-b-md">
+                    Fees Module
+                </div>
+                  <div>
+ <form action="students/search" method="POST" role="search">
+               {{ csrf_field() }}
+        <input type="text" name="searchValue"
+            placeholder="Search student"> <span class="input-group-btn">
+            <input type="submit" value="Search">
+               
+            <br><br>
+    
+</form>
+                </div>
 
-</tr>
+                <div class="links">
+                <a href = "Macharia/students">Add Student</a>
+ <a href = "Macharia/fees">Fees Payment</a>
+<a href="Macharia/allStudents">All Students</a>
+<a href="Macharia/totalFees">Total Fees</a>
 
-@foreach ($fees as $fee)
-<tr>
-<td>{{$fee->date_of_payment}}</td>
-<td>{{$fee->amount}}</td>
-<td>{{$fee->student_id}}</td>
-</tr>
-
-@endforeach
-
-
-
-</table>
-<p> Total Fees Paid:{{$fees->sum('amount')}}</p>
-
-<a href = "/">Back</a>
-       
+                </div>
+            </div>
+        </div>
     </body>
 </html>
-
-

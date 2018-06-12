@@ -38,15 +38,20 @@ class StudentsController extends Controller
         
     }
 
-    public function search(Request $request, $id)
+    public function search(Request $request)
     {
-        $student_no = $_GET['student_no'];
-    
-        $student = \App\Student::where([ 
-            ['student_no', 'LIKE', '%' . $student_no . '%']])->get();
-    
-        return view('Macharia/searchResults');
-        
+        // $searchValue =$request->get('searchValue');
+        // $search = Student::where('student_no','LIKE','%'.$searchValue.'%')->
+        // orWhere('full_name','LIKE','%'.$searchValue.'%')->get();
+        // if(count($search) > 0)
+        //     return view('Macharia/searchResults',['students'=>$search]);
+        // else return view ('Macharia/welcome')
+        // ->withMessage('No Details found. Try to search again !');
+        $searchValue =$request->get('searchValue');
+        $search = Fees::where('student_id','LIKE','%'.$searchValue.'%')->get();
+      
+        return view('Macharia/allFees',['fees'=>$search]);
+      
     }
 
     
@@ -55,3 +60,11 @@ class StudentsController extends Controller
         
     }
 }
+
+
+
+
+
+
+
+

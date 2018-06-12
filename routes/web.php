@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('/Macharia/home');
+    return view('/Macharia/welcome');
 });
 
 
@@ -26,7 +26,7 @@ Route::get('/Macharia/students','StudentsController@create');
 
  Route::get('/Macharia/allStudents', 'StudentsController@index');
 
- Route::get('/Macharia/searchResults', 'StudentsController@search');
+ Route::post('students/search', 'StudentsController@search');
 
- Route::get('/Macharia/allFees', 'FeesController@totalFees');
+ Route::get('/Macharia/totalFees', 'FeesController@index');
 

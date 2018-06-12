@@ -1,7 +1,7 @@
 
 <html>
     <head>
-        <title>Search Results</title>
+        <title>Students</title>
     </head>
     <body>
        
@@ -15,21 +15,20 @@
 <td>Address</td>
 </tr>
 
-@if (count($students) === 0)
- {{no results found}}
-@elseif (count($students) >= 1)
 @foreach ($students as $student)
 <tr>
+
 <td>{{$student->student_no}}</td>
 <td>{{$student->full_name}}</td>
 <td>{{$student->DOB}}</td>
 <td>{{$student->address}}</td>
-@endif
+
 </tr>
 @endforeach
 
 
 </table>
+
 <a href = "/">Back</a>
        
     </body>

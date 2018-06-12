@@ -11,7 +11,7 @@ class FeesController extends Controller
     public function index()
     {
         $fees= Fees::all();
-        return view('Macharia/allFees',['fees'=>$fees]);
+        return view('Macharia/totalFees',['fees'=>$fees]);
     }
     public function create()
     {
@@ -35,7 +35,7 @@ class FeesController extends Controller
         $fees= new Fees();
         $fees->sum('amount');
 
-        // return view('Macharia/allFees ',['fees'=>$fees]);
+         return view('Macharia/totalFees ',['fees'=>$fees]);
     }
 
     public function edit($id)
